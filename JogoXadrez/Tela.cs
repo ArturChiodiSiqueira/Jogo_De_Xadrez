@@ -10,7 +10,7 @@ namespace JogoXadrez
 
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
-            imprimirTabuleiro(partida.tab);
+            imprimirTabuleiro(partida.tabuleiro);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
