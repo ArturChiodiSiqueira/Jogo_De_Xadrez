@@ -110,7 +110,7 @@ namespace JogoXadrez
 
             if (peca == null)
             {
-                Console.Write("- ");
+                Console.Write("* ");
             }
             else
             {
