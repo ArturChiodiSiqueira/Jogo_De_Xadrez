@@ -15,14 +15,13 @@ namespace JogoXadrez
 
                 while (!partida.terminada)
                 {
-
                     try
                     {
                         Console.Clear();
                         Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
-                        Console.Write("Origem: ");
+                        Console.Write("Infome a Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
 
@@ -32,7 +31,7 @@ namespace JogoXadrez
                         Tela.imprimirTabuleiro(partida.tabuleiro, posicoesPossiveis);
 
                         Console.WriteLine();
-                        Console.Write("Destino: ");
+                        Console.Write("Informe o Destino: ");
                         Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeDestino(origem, destino);
 
@@ -52,7 +51,7 @@ namespace JogoXadrez
                 Console.WriteLine(exception.Message);
             }
 
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
