@@ -8,12 +8,11 @@ namespace JogoXadrez
     {
         static void Main(string[] args)
         {
-
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while (!partida.terminada)
+                while (!partida.Terminada)
                 {
                     try
                     {
@@ -53,4 +52,3 @@ namespace JogoXadrez
         }
     }
 }
-

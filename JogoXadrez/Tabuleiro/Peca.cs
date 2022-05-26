@@ -3,35 +3,35 @@
     abstract class Peca
     {
 
-        public Posicao posicao { get; set; }
-        public Cor cor { get; protected set; }
-        public int qteMovimentos { get; protected set; }
-        public ClasseTabuleiro tab { get; protected set; }
+        public Posicao Posicao { get; set; }
+        public Cor Cor { get; protected set; }
+        public int QuantidadeMovimentos { get; protected set; }
+        public ClasseTabuleiro Tabuleiro { get; protected set; }
 
         public Peca(ClasseTabuleiro tabuleiro, Cor cor)
         {
-            this.posicao = null;
-            this.tab = tabuleiro;
-            this.cor = cor;
-            this.qteMovimentos = 0;
+            Posicao = null;
+            Tabuleiro = tabuleiro;
+            Cor = cor;
+            QuantidadeMovimentos = 0;
         }
 
         public void incrementarQteMovimentos()
         {
-            qteMovimentos++;
+            QuantidadeMovimentos++;
         }
 
         public void decrementarQteMovimentos()
         {
-            qteMovimentos--;
+            QuantidadeMovimentos--;
         }
 
         public bool existeMovimentosPossiveis()
         {
             bool[,] matriz = movimentosPossiveis();
-            for (int i = 0; i < tab.linhas; i++)
+            for (int i = 0; i < Tabuleiro.Linhas; i++)
             {
-                for (int j = 0; j < tab.colunas; j++)
+                for (int j = 0; j < Tabuleiro.Colunas; j++)
                 {
                     if (matriz[i, j])
                     {
@@ -44,10 +44,9 @@
 
         public bool movimentoPossivel(Posicao posicao)
         {
-            return movimentosPossiveis()[posicao.linha, posicao.coluna];
+            return movimentosPossiveis()[posicao.Linha, posicao.Coluna];
         }
 
         public abstract bool[,] movimentosPossiveis();
     }
 }
-

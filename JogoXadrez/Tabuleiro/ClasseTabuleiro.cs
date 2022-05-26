@@ -3,14 +3,14 @@
     class ClasseTabuleiro
     {
 
-        public int linhas { get; set; }
-        public int colunas { get; set; }
+        public int Linhas { get; set; }
+        public int Colunas { get; set; }
         private Peca[,] pecas;
 
         public ClasseTabuleiro(int linhas, int colunas)
         {
-            this.linhas = linhas;
-            this.colunas = colunas;
+            Linhas = linhas;
+            Colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
 
@@ -21,7 +21,7 @@
 
         public Peca peca(Posicao posicao)
         {
-            return pecas[posicao.linha, posicao.coluna];
+            return pecas[posicao.Linha, posicao.Coluna];
         }
 
         public bool existePeca(Posicao posicao)
@@ -36,8 +36,8 @@
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
-            pecas[posicao.linha, posicao.coluna] = peca;
-            peca.posicao = posicao;
+            pecas[posicao.Linha, posicao.Coluna] = peca;
+            peca.Posicao = posicao;
         }
 
         public Peca retirarPeca(Posicao posicao)
@@ -47,14 +47,14 @@
                 return null;
             }
             Peca auxiliar = peca(posicao);
-            auxiliar.posicao = null;
-            pecas[posicao.linha, posicao.coluna] = null;
+            auxiliar.Posicao = null;
+            pecas[posicao.Linha, posicao.Coluna] = null;
             return auxiliar;
         }
 
         public bool posicaoValida(Posicao posicao)
         {
-            if (posicao.linha < 0 || posicao.linha >= linhas || posicao.coluna < 0 || posicao.coluna >= colunas)
+            if (posicao.Linha < 0 || posicao.Linha >= Linhas || posicao.Coluna < 0 || posicao.Coluna >= Colunas)
             {
                 return false;
             }
@@ -70,4 +70,3 @@
         }
     }
 }
-

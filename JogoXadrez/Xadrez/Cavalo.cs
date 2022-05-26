@@ -2,10 +2,8 @@
 
 namespace Xadrez
 {
-
     class Cavalo : Peca
     {
-
         public Cavalo(ClasseTabuleiro tabuleiro, Cor cor) : base(tabuleiro, cor)
         {
         }
@@ -17,59 +15,58 @@ namespace Xadrez
 
         private bool podeMover(Posicao possicao)
         {
-            Peca peca = tab.peca(possicao);
-            return peca == null || peca.cor != cor;
+            Peca peca = Tabuleiro.peca(possicao);
+            return peca == null || peca.Cor != Cor;
         }
 
         public override bool[,] movimentosPossiveis()
         {
-            bool[,] matriz = new bool[tab.linhas, tab.colunas];
+            bool[,] matriz = new bool[Tabuleiro.Linhas, Tabuleiro.Colunas];
 
             Posicao posicao = new Posicao(0, 0);
 
-            posicao.definirValores(base.posicao.linha - 1, base.posicao.coluna - 2);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha - 1, base.Posicao.Coluna - 2);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha - 2, base.posicao.coluna - 1);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha - 2, base.Posicao.Coluna - 1);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha - 2, base.posicao.coluna + 1);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha - 2, base.Posicao.Coluna + 1);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha - 1, base.posicao.coluna + 2);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha - 1, base.Posicao.Coluna + 2);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha + 1, base.posicao.coluna + 2);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha + 1, base.Posicao.Coluna + 2);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha + 2, base.posicao.coluna + 1);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha + 2, base.Posicao.Coluna + 1);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha + 2, base.posicao.coluna - 1);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha + 2, base.Posicao.Coluna - 1);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
-            posicao.definirValores(base.posicao.linha + 1, base.posicao.coluna - 2);
-            if (tab.posicaoValida(posicao) && podeMover(posicao))
+            posicao.definirValores(base.Posicao.Linha + 1, base.Posicao.Coluna - 2);
+            if (Tabuleiro.posicaoValida(posicao) && podeMover(posicao))
             {
-                matriz[posicao.linha, posicao.coluna] = true;
+                matriz[posicao.Linha, posicao.Coluna] = true;
             }
 
             return matriz;
         }
     }
 }
-

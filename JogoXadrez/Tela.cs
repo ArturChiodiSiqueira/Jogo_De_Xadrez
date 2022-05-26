@@ -7,18 +7,17 @@ namespace JogoXadrez
 {
     class Tela
     {
-
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
             imprimirTabuleiro(partida.tabuleiro);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.turno);
-            if (!partida.terminada)
+            Console.WriteLine("Turno: " + partida.Turno);
+            if (!partida.Terminada)
             {
-                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-                if (partida.xeque)
+                Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                if (partida.Xeque)
                 {
                     Console.WriteLine("XEQUE!");
                 }
@@ -26,7 +25,7 @@ namespace JogoXadrez
             else
             {
                 Console.WriteLine("XEQUEMATE!");
-                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+                Console.WriteLine("Vencedor: " + partida.JogadorAtual);
             }
         }
 
@@ -57,10 +56,10 @@ namespace JogoXadrez
         public static void imprimirTabuleiro(ClasseTabuleiro tabuleiro)
         {
 
-            for (int i = 0; i < tabuleiro.linhas; i++)
+            for (int i = 0; i < tabuleiro.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for (int j = 0; j < tabuleiro.colunas; j++)
+                for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     imprimirPeca(tabuleiro.peca(i, j));
                 }
@@ -75,10 +74,10 @@ namespace JogoXadrez
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
 
-            for (int i = 0; i < tabuleiro.linhas; i++)
+            for (int i = 0; i < tabuleiro.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for (int j = 0; j < tabuleiro.colunas; j++)
+                for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     if (posicoePossiveis[i, j])
                     {
@@ -114,7 +113,7 @@ namespace JogoXadrez
             }
             else
             {
-                if (peca.cor == Cor.Branca)
+                if (peca.Cor == Cor.Branca)
                 {
                     Console.Write(peca);
                 }
@@ -128,6 +127,5 @@ namespace JogoXadrez
                 Console.Write(" ");
             }
         }
-
     }
 }
