@@ -41,21 +41,21 @@ namespace Xadrez
             // #jogadaespecial roque pequeno
             if (peca is Rei && destino.Coluna == origem.Coluna + 2)
             {
-                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
-                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
-                Peca T = tabuleiro.retirarPeca(origemT);
-                T.incrementarQteMovimentos();
-                tabuleiro.colocarPeca(T, destinoT);
+                Posicao origemTorre = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoTorre = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca Torre = tabuleiro.retirarPeca(origemTorre);
+                Torre.incrementarQteMovimentos();
+                tabuleiro.colocarPeca(Torre, destinoTorre);
             }
 
             // #jogadaespecial roque grande
             if (peca is Rei && destino.Coluna == origem.Coluna - 2)
             {
-                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
-                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
-                Peca T = tabuleiro.retirarPeca(origemT);
-                T.incrementarQteMovimentos();
-                tabuleiro.colocarPeca(T, destinoT);
+                Posicao origemTorre = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoTorre = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca Torre = tabuleiro.retirarPeca(origemTorre);
+                Torre.incrementarQteMovimentos();
+                tabuleiro.colocarPeca(Torre, destinoTorre);
             }
 
             // #jogadaespecial en passant
@@ -93,21 +93,21 @@ namespace Xadrez
             // #jogadaespecial roque pequeno
             if (peca is Rei && destino.Coluna == origem.Coluna + 2)
             {
-                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
-                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
-                Peca T = tabuleiro.retirarPeca(destinoT);
-                T.decrementarQteMovimentos();
-                tabuleiro.colocarPeca(T, origemT);
+                Posicao origemTorre = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoTorre = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca Torre = tabuleiro.retirarPeca(destinoTorre);
+                Torre.decrementarQteMovimentos();
+                tabuleiro.colocarPeca(Torre, origemTorre);
             }
 
             // #jogadaespecial roque grande
             if (peca is Rei && destino.Coluna == origem.Coluna - 2)
             {
-                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
-                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
-                Peca T = tabuleiro.retirarPeca(destinoT);
-                T.decrementarQteMovimentos();
-                tabuleiro.colocarPeca(T, origemT);
+                Posicao origemTorre = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoTorre = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca Torre = tabuleiro.retirarPeca(destinoTorre);
+                Torre.decrementarQteMovimentos();
+                tabuleiro.colocarPeca(Torre, origemTorre);
             }
 
             // #jogadaespecial en passant

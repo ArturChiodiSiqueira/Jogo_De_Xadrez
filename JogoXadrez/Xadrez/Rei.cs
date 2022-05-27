@@ -86,9 +86,9 @@ namespace Xadrez
             // #jogadaespecial roque
             if (QuantidadeMovimentos == 0 && !Partida.Xeque)
             {
-                // #jogadaespecial roque pequeno
-                Posicao posT1 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna + 3);
-                if (testeTorreParaRoque(posT1))
+                // #jogadaespecial roque pequeno (T1)
+                Posicao posicaoTorre1 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna + 3);
+                if (testeTorreParaRoque(posicaoTorre1))
                 {
                     Posicao posicao1 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna + 1);
                     Posicao posicao2 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna + 2);
@@ -97,9 +97,9 @@ namespace Xadrez
                         matriz[base.Posicao.Linha, base.Posicao.Coluna + 2] = true;
                     }
                 }
-                // #jogadaespecial roque grande
-                Posicao posT2 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna - 4);
-                if (testeTorreParaRoque(posT2))
+                // #jogadaespecial roque grande (T2)
+                Posicao posicaoTorre2 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna - 4);
+                if (testeTorreParaRoque(posicaoTorre2))
                 {
                     Posicao posicao1 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna - 1);
                     Posicao posicao2 = new Posicao(base.Posicao.Linha, base.Posicao.Coluna - 2);

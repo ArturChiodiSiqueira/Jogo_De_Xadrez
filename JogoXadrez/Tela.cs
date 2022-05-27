@@ -12,8 +12,7 @@ namespace JogoXadrez
             imprimirTabuleiro(partida.tabuleiro);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
-            Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.Turno);
+            Console.WriteLine("\nTurno: " + partida.Turno);
             if (!partida.Terminada)
             {
                 Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
