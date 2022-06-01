@@ -12,10 +12,15 @@ namespace JogoXadrez
             imprimirTabuleiro(partida.tabuleiro);
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("\nTurno: " + partida.Turno);
+            Console.ForegroundColor = ConsoleColor.White;
             if (!partida.Terminada)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                Console.ForegroundColor = ConsoleColor.White;
                 if (partida.Xeque)
                 {
                     Console.WriteLine("XEQUE!");
@@ -33,10 +38,12 @@ namespace JogoXadrez
             Console.WriteLine("Peças capturadas:");
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+
             Console.WriteLine();
-            Console.Write("Pretas: ");
+
             ConsoleColor auxiliar = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Pretas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
             Console.ForegroundColor = auxiliar;
             Console.WriteLine();
@@ -45,9 +52,9 @@ namespace JogoXadrez
         public static void imprimirConjunto(HashSet<Peca> conjunto)
         {
             Console.Write("[");
-            foreach (Peca x in conjunto)
+            foreach (Peca peca in conjunto)
             {
-                Console.Write(x + " ");
+                Console.Write(peca + " ");
             }
             Console.Write("]");
         }
