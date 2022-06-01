@@ -57,14 +57,18 @@ namespace JogoXadrez
 
             for (int i = 0; i < tabuleiro.Linhas; i++)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.Write(8 - i + " ");
+                Console.ForegroundColor = ConsoleColor.White;
                 for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     imprimirPeca(tabuleiro.peca(i, j));
                 }
                 Console.WriteLine();
             }
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("  a b c d e f g h");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void imprimirTabuleiro(ClasseTabuleiro tabuleiro, bool[,] posicoePossiveis)
@@ -75,7 +79,9 @@ namespace JogoXadrez
 
             for (int i = 0; i < tabuleiro.Linhas; i++)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.Write(8 - i + " ");
+                Console.ForegroundColor = ConsoleColor.White;
                 for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     if (posicoePossiveis[i, j])
@@ -91,7 +97,9 @@ namespace JogoXadrez
                 }
                 Console.WriteLine();
             }
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("  a b c d e f g h");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = fundoOriginal;
         }
 
